@@ -46,5 +46,5 @@ content.rowconfigure(1, weight=1)
 # Process bar
 p = ttk.Progressbar(root, orient=HORIZONTAL, length=680, mode='determinate')
 p.grid(column=0, row=0, columnspan=20, padx=10, pady=20)
-#fdcdc
+
 root.mainloop()

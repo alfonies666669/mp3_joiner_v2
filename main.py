@@ -1,7 +1,7 @@
 import subprocess
 import os
 import shutil
-#cd
+
 path_to_book = input("Path to file: ")
 files = os.listdir(os.chdir(path_to_book))
 try:
