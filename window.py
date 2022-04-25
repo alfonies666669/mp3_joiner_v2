@@ -2,6 +2,7 @@ import tkinter
 from tkinter import *
 from tkinter import Menu
 from tkinter import ttk
+from main import *
 
 root = Tk()
 content = ttk.Frame(root, padding=(3, 3, 12, 12))
@@ -31,20 +32,25 @@ menu.add_cascade(label='Справка', menu=support)
 root.config(menu=menu)
 
 # Buttons
-ok = ttk.Button(content, text="Отменить")
-cancel = ttk.Button(content, text="OK")
+cancel = ttk.Button(content, text="Отменить")
+ok = ttk.Button(content, text="OK")
 content.grid(column=0, row=0, sticky=(N, S, E, W))
-ok.grid(column=3, row=3)
-cancel.grid(column=4, row=3)
+cancel.grid(column=3, row=3)
+ok.grid(column=4, row=3)
 
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 content.columnconfigure(0, weight=3)
 content.columnconfigure(1, weight=3)
-content.rowconfigure(1, weight=1)
+content.rowconfigure(1, weight=1) # Расположение внизу
 
 # Process bar
-p = ttk.Progressbar(root, orient=HORIZONTAL, length=680, mode='determinate')
-p.grid(column=0, row=0, columnspan=20, padx=10, pady=20)
+"""p = ttk.Progressbar(root, orient=HORIZONTAL, length=680, mode='determinate')
+p.grid(column=0, row=0, columnspan=20, padx=10, pady=20)"""
+
+# Spin box
+spinal = StringVar()
+s = ttk.Spinbox(root, from_=1.0, to=100.0, textvariable=spinal)
+s.grid(column=0, row=0, columnspan=1, padx=0, pady=0)
 
 root.mainloop()
