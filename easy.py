@@ -22,22 +22,19 @@ def main_loop():
     except FileExistsError:
         pass
     max_value = int(len(files)) // int(how_much)
+    destination_path = path_to + r'\joined'
     while len(files) != 0:
         common_list.append(files[0:how_much])
         for i in common_list:
             common_el += '|'.join(i)
         subprocess.run(f'ffmpeg -i "concat:{common_el}" -acodec copy joined_{cnt}.mp3')
         new_file = f'joined_{cnt}.mp3'
-        destination_path = path_to + r'\joined'
-        try:
-            shutil.move(new_file, destination_path)
-        except:
-            continue
+        shutil.move(new_file, destination_path)
         common_list.clear()
         common_el = ''
         cnt += 1
         del files[0:how_much]
-        sg.one_line_progress_meter('Loading', cnt, max_value + 1, 'loading', orientation='h')
+        sg.one_line_progress_meter('Loading', cnt, max_value, 'loading', orientation='h', no_button=True)
 
 
 def main_window():
