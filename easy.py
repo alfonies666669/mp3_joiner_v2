@@ -34,7 +34,7 @@ def main_loop():
         common_el = ''
         cnt += 1
         del files[0:how_much]
-        sg.one_line_progress_meter('Loading', cnt, max_value, 'loading', orientation='h', no_button=True)
+        sg.one_line_progress_meter('Loading', cnt, max_value, orientation='h', no_button=True)
 
 
 def main_window():
