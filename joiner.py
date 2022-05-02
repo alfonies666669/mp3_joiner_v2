@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-path_to = r'C:\Users\Serafim\Downloads\books\Опасные связи (чит. Евгений Терновский)'
+path_to = r''
 
 
 def main_loop():
@@ -13,7 +13,6 @@ def main_loop():
     del list_files[-1]
     how_much = int(input("How: "))
     files = [x.join('""') for x in list_files]
-    print(files)
     # max_value = int(len(files)) // int(how_much)
     while len(files) != 0:
         common_list.append(files[0:how_much])
